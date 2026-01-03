@@ -1,7 +1,7 @@
 plugins {
-    kotlin("jvm") version "2.2.21"
+    kotlin("jvm") version "1.9.22"
     kotlin("plugin.spring") version "2.2.21"
-    id("org.springframework.boot") version "4.0.1"
+    id("org.springframework.boot") version "3.5.9"
     id("io.spring.dependency-management") version "1.1.7"
     kotlin("plugin.jpa") version "2.2.21"
 }
@@ -29,15 +29,14 @@ repositories {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-data-redis")
-    implementation("org.springframework.boot:spring-boot-starter-webmvc")
+    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.redisson:redisson-spring-boot-starter:4.1.0")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("tools.jackson.module:jackson-module-kotlin")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     compileOnly("org.projectlombok:lombok")
-    runtimeOnly("com.mysql:mysql-connector-j")
     annotationProcessor("org.projectlombok:lombok")
-    testImplementation("org.springframework.boot:spring-boot-starter-data-jpa-test")
-    testImplementation("org.springframework.boot:spring-boot-starter-data-redis-test")
-    testImplementation("org.springframework.boot:spring-boot-starter-webmvc-test")
+    runtimeOnly("com.mysql:mysql-connector-j")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }

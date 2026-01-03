@@ -1,4 +1,5 @@
 package kr.co.miracle.open_run_test
 
-interface CouponRepository {
-}
+import org.springframework.data.jpa.repository.JpaRepository
+
+interface CouponRepository : JpaRepository<Coupon, Long>

@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: open_run_test
+  datasource:
+    url: jdbc:mysql://localhost:3306/DEV?useSSL=false&allowPublicKeyRetrieval=true
+    username: dev
+    password: a1234567
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update  # 서버 켤 때 테이블 자동 생성 (실무 운영에선 validate 사용)
+    show-sql: true      # 실행되는 쿼리를 콘솔에 보여줌
+    properties:
+      hibernate:
+      format_sql: true # 쿼리를 예쁘게 줄바꿈해서 보여줌
